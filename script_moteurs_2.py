@@ -23,19 +23,25 @@ PWM_saf.start(0)
 
 try:
     while True:
-        # Test moteur 1 :
+        # Test moteur 1 (GV) & 2 (safran) :
         GPIO.output(sens_GV, GPIO.HIGH) # on force le sens de rotation du moteur
-        PWM_GV.ChangeDutyCycle(30) # on fait tourner le moteur à 30% de sa vitesse
-        sleep(5) # maintient la vitesse pendant 5 secondes
-        GPIO.output(sens_GV, GPIO.LOW) # on inverse le sens de rotation du moteur
-        sleep(5) # il tourne dans l'autre sens pendant 5s
+        GPIO.output(sens_saf, GPIO.HIGH)
+        PWM_GV.ChangeDutyCycle(50) # on fait tourner le moteur à 30% de sa vitesse
+        PWM_saf.ChangeDutyCycle(50)
 
-        # Test moteur 2 :
-        GPIO.output(sens_saf, GPIO.HIGH) # on force le sens de rotation du moteur
-        PWM_saf.ChangeDutyCycle(30) # on fait tourner le moteur à 30% de sa vitesse
         sleep(5) # maintient la vitesse pendant 5 secondes
-        GPIO.output(sens_saf, GPIO.LOW) # on inverse le sens de rotation du moteur
-        sleep(5) # il tourne dans l'autre sens pendant 5s
+
+        PWM_GV.ChangeDutyCycle(0)
+        PWM_saf.ChangeDutyCycle(0)
+
+        sleep(2) # s'arrête pendant 2s
+
+        GPIO.output(sens_GV, GPIO.LOW) # on inverse le sens de rotation du moteur
+        GPIO.output(sens_saf, GPIO.LOW)
+        PWM_GV.ChangeDutyCycle(50)
+        PWM_saf.ChangeDutyCycle(50)
+
+        sleep(5) # les moteurs tournent dans l'autre sens pendant 5s
 
 except KeyboardInterrupt:
     print("Arrêt du programme")
