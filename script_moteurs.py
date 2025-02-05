@@ -8,7 +8,7 @@ SENSA = 5  # Controle le sens du moteur
 PWMB = 13  # PWM1 matériel par défaut moteur B Safran
 SENSB = 18  # Controle le sens du moteur
 
-# Configuration des GPIO
+# Configuration des GPIOs
 GPIO.setmode(GPIO.BCM)
 GPIO.setup([SENSA, SENSB], GPIO.OUT)
 GPIO.setup([PWMA, PWMB], GPIO.OUT)
