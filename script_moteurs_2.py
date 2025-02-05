@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import time
+from time import sleep
 
 # Définition des pins utilisés
 ENA_GV = 32  # PWM0 matériel par défaut moteur A GV : GPIO12
