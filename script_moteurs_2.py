@@ -6,7 +6,7 @@ ENA_GV = 32  # PWM0 matériel par défaut moteur A GV : GPIO12
 sens_GV = 29  # Controle le sens du moteur : GPIO5
 
 ENA_saf = 33  # PWM1 matériel par défaut moteur B Safran : GPIO13
-sens_saf = 12  # Controle le sens du moteur : GPIO18
+sens_saf = 31  # Controle le sens du moteur : GPIO18 -> GPIO6
 
 # Configuration des GPIOs
 GPIO.setmode(GPIO.BOARD) # note les entrées avec les numéros des pins et non ceux des GPIOs
