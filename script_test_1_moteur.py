@@ -18,6 +18,7 @@ try:
     while True:
         # Test moteur 1 (GV) :
         GPIO.output(sens_GV, GPIO.HIGH) # on force le sens de rotation du moteur
+        # HIGH = tension négative aux bornes du moteur (LED verte)
         PWM_GV.ChangeDutyCycle(20) # on fait tourner le moteur à 30% de sa vitesse
 
         sleep(1) # maintient la vitesse pendant 5 secondes
@@ -27,9 +28,14 @@ try:
         sleep(2) # s'arrête pendant 2s
 
         GPIO.output(sens_GV, GPIO.LOW) # on inverse le sens de rotation du moteur
+        # LOW = tension positive aux bornes du moteur (LED rouge)
         PWM_GV.ChangeDutyCycle(20)
 
         sleep(1) # les moteurs tournent dans l'autre sens pendant 5s
+
+        PWM_GV.ChangeDutyCycle(0)
+
+        sleep(2) # s'arrête pendant 2s
 
 except KeyboardInterrupt:
     print("Arrêt du programme")
