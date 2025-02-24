@@ -29,7 +29,7 @@ try:
         PWM_GV.ChangeDutyCycle(50) # on fait tourner le moteur à 30% de sa vitesse
         PWM_saf.ChangeDutyCycle(50)
 
-        sleep(5) # maintient la vitesse pendant 5 secondes
+        sleep(2) # maintient la vitesse pendant 5 secondes
 
         PWM_GV.ChangeDutyCycle(0)
         PWM_saf.ChangeDutyCycle(0)
@@ -41,7 +41,12 @@ try:
         PWM_GV.ChangeDutyCycle(50)
         PWM_saf.ChangeDutyCycle(50)
 
-        sleep(5) # les moteurs tournent dans l'autre sens pendant 5s
+        sleep(2) # les moteurs tournent dans l'autre sens pendant 5s
+
+        PWM_GV.ChangeDutyCycle(0)
+        PWM_saf.ChangeDutyCycle(0)
+
+        sleep(2) # s'arrête pendant 2s
 
 except KeyboardInterrupt:
     print("Arrêt du programme")
