@@ -22,7 +22,7 @@ try:
         # HIGH = tension négative aux bornes du moteur (LED verte) -> rotation sens anti-horaire vu de dessus -> voile à babord
         PWM_GV.ChangeDutyCycle(20) # on fait tourner le moteur à 30% de sa vitesse
 
-        sleep(1) # maintient la vitesse pendant 5 secondes
+        sleep(5) # maintient la vitesse pendant 5 secondes
 
         PWM_GV.ChangeDutyCycle(0)
 
@@ -32,7 +32,7 @@ try:
         # LOW = tension positive aux bornes du moteur (LED rouge) -> rotation sens horaire vu de dessus -> voile à tribord
         PWM_GV.ChangeDutyCycle(20)
 
-        sleep(1) # les moteurs tournent dans l'autre sens pendant 5s
+        sleep(5) # les moteurs tournent dans l'autre sens pendant 5s
 
         PWM_GV.ChangeDutyCycle(0)
 
