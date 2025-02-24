@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from MCP3008 import MCP3008
 
 adc = MCP3008()
