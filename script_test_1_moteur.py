@@ -18,7 +18,7 @@ PWM_GV.start(0) # le signal vaut 0 (moteur éteint)
 try:
     while True:
         # Test moteur 1 (GV) :
-        GPIO.output(sens_GV, GPIO.HIGH) # on force le sens de rotation du moteur
+        GPIO.output(sens_GV, GPIO.LOW) # on force le sens de rotation du moteur
         # HIGH = tension négative aux bornes du moteur (LED verte) -> rotation sens anti-horaire vu de dessus -> voile à babord
         PWM_GV.ChangeDutyCycle(20) # on fait tourner le moteur à 30% de sa vitesse
 
