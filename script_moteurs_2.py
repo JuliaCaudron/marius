@@ -26,8 +26,8 @@ try:
         # Test moteur 1 (GV) & 2 (safran) :
         GPIO.output(sens_GV, GPIO.HIGH) # on force le sens de rotation du moteur
         GPIO.output(sens_saf, GPIO.HIGH)
-        #PWM_GV.ChangeDutyCycle(20) # on fait tourner le moteur à 30% de sa vitesse
-        PWM_saf.ChangeDutyCycle(10)
+        PWM_GV.ChangeDutyCycle(20) # on fait tourner le moteur à 30% de sa vitesse
+        #PWM_saf.ChangeDutyCycle(10)
 
         sleep(1) # maintient la vitesse pendant 5 secondes
 
@@ -37,9 +37,9 @@ try:
         sleep(2) # s'arrête pendant 2s
 
         GPIO.output(sens_GV, GPIO.LOW) # on inverse le sens de rotation du moteur
-        GPIO.output(sens_saf, GPIO.HIGH)
-        #PWM_GV.ChangeDutyCycle(20)
-        PWM_saf.ChangeDutyCycle(10)
+        GPIO.output(sens_saf, GPIO.LOW)
+        PWM_GV.ChangeDutyCycle(20)
+        #PWM_saf.ChangeDutyCycle(10)
 
         sleep(1) # les moteurs tournent dans l'autre sens pendant 5s
 
