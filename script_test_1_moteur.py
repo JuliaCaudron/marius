@@ -3,8 +3,8 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 # Définition des pins utilisés
-ENA_GV = 32  # PWM0 matériel par défaut moteur A GV : GPIO12
-sens_GV = 29  # Controle le sens du moteur : GPIO5
+ENA_GV = 33  # PWM0 matériel par défaut moteur A GV : GPIO12
+sens_GV = 31  # Controle le sens du moteur : GPIO5
 
 # Configuration des GPIOs
 GPIO.setmode(GPIO.BOARD) # note les entrées avec les numéros des pins et non ceux des GPIOs
@@ -28,7 +28,7 @@ try:
 
         sleep(2) # s'arrête pendant 2s
 
-        GPIO.output(sens_GV, GPIO.LOW) # on inverse le sens de rotation du moteur
+        GPIO.output(sens_GV, GPIO.HIGH) # on inverse le sens de rotation du moteur
         # LOW = tension positive aux bornes du moteur (LED rouge) -> rotation sens horaire vu de dessus -> voile à tribord
         PWM_GV.ChangeDutyCycle(20)
 
