@@ -27,9 +27,9 @@ try:
         GPIO.output(sens_GV, GPIO.HIGH) # on force le sens de rotation du moteur
         GPIO.output(sens_saf, GPIO.HIGH)
         PWM_GV.ChangeDutyCycle(20) # on fait tourner le moteur à 30% de sa vitesse
-        PWM_saf.ChangeDutyCycle(30)
+        PWM_saf.ChangeDutyCycle(10)
 
-        sleep(2) # maintient la vitesse pendant 5 secondes
+        sleep(1) # maintient la vitesse pendant 5 secondes
 
         PWM_GV.ChangeDutyCycle(0)
         PWM_saf.ChangeDutyCycle(0)
@@ -39,9 +39,9 @@ try:
         GPIO.output(sens_GV, GPIO.LOW) # on inverse le sens de rotation du moteur
         GPIO.output(sens_saf, GPIO.LOW)
         PWM_GV.ChangeDutyCycle(20)
-        PWM_saf.ChangeDutyCycle(30)
+        #PWM_saf.ChangeDutyCycle(10)
 
-        sleep(2) # les moteurs tournent dans l'autre sens pendant 5s
+        sleep(1) # les moteurs tournent dans l'autre sens pendant 5s
 
         PWM_GV.ChangeDutyCycle(0)
         PWM_saf.ChangeDutyCycle(0)
