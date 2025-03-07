@@ -1,3 +1,6 @@
+# script permettant le test de mise en marche d'un seul moteur.
+# La commande se fait en PWM uniquement pour le moment.
+
 # -*- coding: utf-8 -*-
 import RPi.GPIO as GPIO
 from time import sleep
