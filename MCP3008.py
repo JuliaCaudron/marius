@@ -1,3 +1,5 @@
+# classe permettant l utilisation de l ADC pour recuperer les donnees du potentiometre 
+
 from spidev import SpiDev
 
 class MCP3008:
