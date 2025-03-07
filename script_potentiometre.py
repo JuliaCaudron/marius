@@ -1,3 +1,5 @@
+# script permettant la recuperation des donnees des deux potentiometres branches sur les canaux 0 (GV) et 1 (SAF) de l ADC
+
 # -*- coding: utf-8 -*-
 from MCP3008 import MCP3008
 from time import sleep
