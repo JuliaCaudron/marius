@@ -1,3 +1,6 @@
+# script permettant le test de mise en marche des deux moteurs (safran et GV) simultanément.
+# Les commandes se font en PWM uniquement pour le moment.
+
 import RPi.GPIO as GPIO
 from time import sleep
 
